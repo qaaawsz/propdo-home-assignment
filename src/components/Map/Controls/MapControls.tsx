@@ -48,7 +48,10 @@ const MapControls: React.FC<{ setTempCoords: Function }> =
 
 
         return (
-            <div className="controls-container">
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                onSubmit()
+            }} className="controls-container">
                 <span>CURRENT POSITION: </span>
                 <input
                     type="text"
@@ -59,7 +62,7 @@ const MapControls: React.FC<{ setTempCoords: Function }> =
                 <button onClick={() => onSubmit()}>
                     GO
                 </button>
-            </div>
+            </form>
         )
     }
 
